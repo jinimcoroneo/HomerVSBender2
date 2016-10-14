@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/player.rb'
+require './lib/game.rb'
+
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -15,23 +17,22 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-  	@player_1_name = $player_1.name
-  	@player_2_name = $player_2.name
-    @player_1_hp = $player_1.hit_points
-    @player_2_hp = $player_2.hit_points
+    $game = Game.new($player_1, $player_2)
+  	@player_1_name = $game.player_1.name
+  	@player_2_name = $game.player_2.name
+    @player_1_hp = $game.player_1.hit_points
+    @player_2_hp = $game.player_2.hit_points
   	erb(:play)
   end
 
   get '/attack' do
-    @player_1_name = $player_1.name
-    @player_2_name = $player_2.name
     if params[:player2]
-      $player_2.damage($player_1)
+      $game.player_2_attack
+      @current_player = $game.player_1
     else
-      $player_1.damage($player_2)
+      $game.player_1_attack
+      @current_player = $game.player_2
     end
-    @player_1_hp = $player_1.hit_points
-    @player_2_hp = $player_2.hit_points
     erb(:attack)
   end
 

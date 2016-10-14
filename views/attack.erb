@@ -1,4 +1,4 @@
-<h1> Direct hit! <%= @player_2_name %> has <%= @player_2_hp %> HP </h1>
+<h1> Direct hit! <%= @current_player.name %> has <%= @current_player.hit_points %> HP </h1>
 
 <form action = "/play" method = "get">
  <input type = "submit" value = "Keep fighting!!">
@@ -11,5 +11,5 @@ input[type=submit]{
     font-weight: bold;
     border-style: solid;
     border-color: red;
+  }
 </style>
-}
