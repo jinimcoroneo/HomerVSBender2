@@ -1,43 +1,52 @@
 
 <table>
   <tr>
-    <th> 
+    <th>
       <font size="15"> <%= @player_1_name %> </font>
     </th>
-    <th> 
-      <font </font>
+    <th>
+      <font> </font>
     </th>
-    <th> 
+    <th>
       <font size="15"> <%= @player_2_name %> </font>
-    </th>    
+    </th>
   </tr>
 
     <tr>
-  	  <td align = "center"> 
+  	  <td align = "center">
   	    <img src = "http://drakinan.weebly.com/uploads/1/3/4/1/13418183/4623978_orig.gif" height = "35%">
   	  </td>
-	    <td align = "center"> 
+	    <td align = "center">
         <img src = "http://static.comicvine.com/uploads/original/13/135728/4521099-9366942388-44897.png">
       </td>
-  	  <td align = "center"> 
+  	  <td align = "center">
   	    <img src = "http://uproxx.files.wordpress.com/2013/03/bender13.gif?w=650" height = "110%">
   	  </td>
    </tr>
 
    <tr>
-  	  <td align = "center"> 
+  	  <td align = "center">
   	    <form action = "/attack" method = "get">
-  	     <input type = "submit" value = "Attack <%= @player_2_name %>!"> 
+  	     <input type = "submit" name = "player1" value = "Attack <%= @player_2_name %>!">
   	    </form>
   	  </td>
   	  <td align = "center"> </td>
-  	  <td align = "center"> 
+  	  <td align = "center">
   	    <form action = "/attack" method = "get">
-  	     <input type = "submit" value = "Attack <%= @player_1_name %>!">
+  	     <input type = "submit" name = "player2" value = "Attack <%= @player_1_name %>!">
   	    </form>
-  	  </td> 
+  	  </td>
    </tr>
 
+   <tr>
+  	  <td align = "center">
+  	    <h2 align = "center"> <%= @player_1_name %>: <%= @player_1_hp %> HP</h2>
+  	  </td>
+  	  <td align = "center"> </td>
+  	  <td align = "center">
+  	     <h2 align = "center"> <%= @player_2_name %>: <%= @player_2_hp %> HP </h2>
+  	  </td>
+   </tr>
 </table>
 
 
@@ -52,7 +61,3 @@ input[type=submit]{
 }
 
 </style>
-
-
-
-
