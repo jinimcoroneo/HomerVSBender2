@@ -1,8 +1,20 @@
-<h1> Direct hit! <%= @current_player.name %> has <%= @current_player.hit_points %> HP </h1>
 
-<form action = "/play" method = "get">
- <input type = "submit" value = "Keep fighting!!">
-</form>
+<% if @current_player.hit_points > 0 %>
+  <h1> Direct hit! <%= @current_player.name %> has <%= @current_player.hit_points %> HP </h1>
+
+  <form action = "/play" method = "get">
+    <input type = "submit" value = "Keep fighting!!">
+  </form>
+<% else %>
+  <h1> GAME OVER! <%= @current_player.name %> loses! </h1>
+  <form action = "/" method = "get">
+    <input type = "submit" value = "Play again">
+  </form>
+<% end %>
+
+
+
+
 
 <style>
 input[type=submit]{
