@@ -1,27 +1,70 @@
-
 <% if @current_player.hit_points > 0 %>
-  <h1> Direct hit! <%= @current_player.name %> has <%= @current_player.hit_points %> HP </h1>
+ <body id = "background1">
+      <h1 id = "direct-hit"> Direct hit! <%= @current_player.name %> has <%= @current_player.hit_points %> HP </h1>
+      <form action = "/play" method = "get">
+        <button type = "submit" value = "Submit">KEEP FIGHTING!!</button>
+      </form>
+ </body>
 
-  <form action = "/play" method = "get">
-    <input type = "submit" value = "Keep fighting!!">
-  </form>
 <% else %>
-  <h1> GAME OVER! <%= @current_player.name %> loses! </h1>
-  <form action = "/" method = "get">
-    <input type = "submit" value = "Play again">
-  </form>
+
+<body id = "background2">
+  <br></br>
+  <h1 id = "gameover" align = "center"> <%= @current_player.name %> loses! </h1>
+        <form action = "/" method = "get">
+          <div class = "buttonHolder">
+            <button type = "submit" value = "Submit">PLAY AGAIN!!</button>
+          </div>
+        </form>
+</body>
 <% end %>
 
-
-
-
-
 <style>
-input[type=submit]{
-	  background-color: white;
-    font-size: 30px;
-    font-weight: bold;
-    border-style: solid;
-    border-color: red;
+
+#direct-hit {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#gameover {
+  color: yellow;
+  font-size: 150px;
+  font-weight: bold;
+}
+
+#background1 {
+  background: url(https://s-media-cache-ak0.pinimg.com/736x/52/93/34/52933479e5d1ccba210c35adce265b3f.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#background2 {
+  background: url(http://img1.wikia.nocookie.net/__cb39/simpsons/images/5/50/Wiki-background) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.buttonHolder{ text-align: center; }
+
+button:hover{
+  background: #3B5C76;
+}
+
+button {
+    border-radius: 4px;
+    background-color: red;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 200px;
+    cursor: pointer;
+    margin: 5px;
   }
-</style>
+
+  </style>

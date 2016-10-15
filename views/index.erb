@@ -1,38 +1,44 @@
-<h1> Let's Battle! </h1>
-<h2> Sign in to start playing </h2><br></br>
-
+<body>
+<br></br>
+<br></br>
 <form action = "/names" method = "post">
-  <label for = "player_1_name">
-    Player 1
-    <input type = "text" name = "player_1_name"> <br></br>
-  </label>
-
-  <label for = "player_2_name">
-  	Player 2
-  <input type = "text" name = "player_2_name"> <br></br>
-  </label>
+  <input type = "text" name = "player_1_name" placeholder="Player 1"> <br></br>
+  <input type = "text" name = "player_2_name" placeholder="Player 2"> <br></br>
   <br></br>
-  <br></br>
-  <input type = "submit" value = "Let's get ready to rumble!">
+  <button type="submit" value="Submit">PLAY!!</button>
 </form>
-
+</body>
 <style>
-h1 {
-    font-size: 60px;
-    color: blue;
+
+html {
+  background: url(https://i.ytimg.com/vi/RnW-LyWBI1Q/maxresdefault.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-h2 {
-	font-size: 40px;
-	color: blue;
-}
-
-input[type=submit]{
-  background-color: white;
+input[type="text"] {
+    width: 220px;
+    height: 35px;
     font-size: 20px;
-    font-weight: bold;
-    border-style: solid;
-    border-color: red;
 }
+
+button:hover{
+  background: #3B5C76;
+}
+
+button {
+    border-radius: 4px;
+    background-color: red;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 200px;
+    cursor: pointer;
+    margin: 5px;
+  }
 
 </style>
