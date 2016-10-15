@@ -1,8 +1,11 @@
 <% if @current_player.hit_points > 0 %>
  <body id = "background1">
-      <h1 id = "direct-hit"> Direct hit! <%= @current_player.name %> has <%= @current_player.hit_points %> HP </h1>
+      <h1 id = "direct-hit" align = "center"> Direct hit! <%= @current_player.name %> has <%= @current_player.hit_points %> HP </h1>
+      <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
       <form action = "/play" method = "get">
-        <button type = "submit" value = "Submit">KEEP FIGHTING!!</button>
+        <div class = "buttonHolder">
+          <button type = "submit" value = "Submit">KEEP FIGHTING!!</button>
+        </div>
       </form>
  </body>
 
@@ -22,8 +25,9 @@
 <style>
 
 #direct-hit {
-  color: white;
-  font-size: 50px;
+  background-color: white;
+  color: red;
+  font-size: 75px;
   font-weight: bold;
 }
 
@@ -34,7 +38,7 @@
 }
 
 #background1 {
-  background: url(https://s-media-cache-ak0.pinimg.com/736x/52/93/34/52933479e5d1ccba210c35adce265b3f.jpg) no-repeat center center fixed;
+  background: url(https://media.giphy.com/media/101G9uA6qOjggo/giphy.gif) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
